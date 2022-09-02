@@ -56,7 +56,30 @@
 padding-top: 102px;
 } */
 
-.navigations{
+.navlinks {
+    margin-left: 0.95rem;
+}
+.navlinks-start{
+    margin-left: -25px;
+}
+.navlinks-end{
+    margin-left: 25px;
+}
+
+/* ======>Conent Details Area<====== */
+.btns{
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    outline: none;
+}
+.btns:hover{
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    transition: 0.4s;
+    padding: 10px 20px;
+}
+.selecte-option{
     background-color: #F1F3F1;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
