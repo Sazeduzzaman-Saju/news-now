@@ -1,0 +1,62 @@
+/* ===> Google Font: Popins <==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+
+/* ===> Some Common Or Root Style <==== */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+
+    :root{
+        --main-color: #6200EE;
+    }
+
+/* ============> Main Style Start <============= */
+/* ======> Navigation Bar Style Start <======== */
+.user-profile img{
+    width: 70px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar-brand img{
+    width: 15%;
+}
+.text-logo {
+    background-image: linear-gradient(to right top, #ff42cd, #e92ecf, #cf1ad2, #b206d5, #9000d8, #8700db, #7e00de, #7300e1, #8a00e5, #9f00e8, #b200eb, #c500ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 10;
+    margin-left: -20px;
+    margin-top: 25px;
+}
+#active{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+.nav-link:hover{
+    color: var(--main-color);
+}
+
+.sticky {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    transition: 0.4s;
+}
+  
+/* .sticky + .content {
+padding-top: 102px;
+} */
+
+.navigations{
+    background-color: #F1F3F1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
