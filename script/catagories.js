@@ -7,6 +7,8 @@ const loadCatagories = ()=>{
 }
 
 const displayNavigation =(nav)=>{
+// start spin
+toggleSpin(true);
     const getNavContainer = document.getElementById('nav-container');
     getNavContainer.innerHTML= `
             <nav class="navbar navbar-expand-lg" id="myHeader">
@@ -17,7 +19,7 @@ const displayNavigation =(nav)=>{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
                     <li class="nav-item navlinks">
-                        <a class="nav-link active navlinks-start" id="active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active navlinks-start" onclick="loadNews('${nav.category_id}')" id="active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
                         <a class="nav-link " id="" aria-current="page" href="#">${nav[0].category_name}</a>
@@ -43,13 +45,13 @@ const displayNavigation =(nav)=>{
                     <li class="nav-item navlinks" onclick="loadNews('${nav[7].category_id}')">
                         <a class="nav-link navlinks-end" id="" aria-current="page" href="#">${nav[7].category_name}</a>
                     </li>
+
                 </ul>
             </div>
             </div>
         </nav>
     `;
     getNavContainer.appendChild(getNavContainer);
-
 }
 
 
@@ -58,11 +60,32 @@ const loadNews = (catagoriId) =>{
     const url =`https://openapi.programming-hero.com/api/news/category/${catagoriId}`;
     fetch(url)
     .then(res=>res.json())
-    .then(data=> newsContainer(data.data));
+    .then(data=> newsContainer(data.data))
+    .catch(error => {
+        element.parentElement.innerHTML = `Error: ${error}`;
+        console.error('There was an error!', error);
+    });
 }
 
+
 const newsContainer=(allNews)=>{
+// Count Data length
+const getLength = allNews.length;
+const getCounterfield= document.getElementById('counter');
+const getCounterfieldValue = getLength;
+getCounterfield.innerText = getCounterfieldValue;
+// console.log(allNews);
+
+// No Data Found Call
+const noData = document.getElementById('no-data-available');
+if (getLength === 0) {
+    noData.classList.remove('d-none');
+} else {
+    noData.classList.add('d-none');
+}
+// Display Data
     const getNewsContainer = document.getElementById('news-container');
+    toggleSpin(false);
     getNewsContainer.innerHTML='';
     allNews.forEach(news => {
         const createElement = document.createElement('div');
@@ -107,7 +130,7 @@ const newsContainer=(allNews)=>{
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-end align-items-center">
-                        <a href=""><i class="fa-solid fa-arrow-right pe-3"></i></a>
+                        <a href="#" id="" onclick="newsDetails()" ><i class="fa-solid fa-arrow-right pe-3"></i></a>
                     </div>
                   </div>
                 </div>
@@ -119,7 +142,29 @@ const newsContainer=(allNews)=>{
         getNewsContainer.appendChild(createElement);
         
     });
+    // stop spinner
+    toggleSpin(false);
+
 }
 
 
+
+
+
+
+
+
+const toggleSpin = isLoading =>{
+    const getTogglerSpiner = document.getElementById('loader');
+    if (isLoading) {
+        getTogglerSpiner.classList.remove('d-none');
+    } else {
+        getTogglerSpiner.classList.add('d-none');
+    }
+}
+
+
+
 loadCatagories();
+
+

@@ -1,0 +1,3 @@
+const newsDetails = ()=>{
+    const url=``;
+}
