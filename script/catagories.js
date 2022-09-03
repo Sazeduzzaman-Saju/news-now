@@ -47,13 +47,12 @@ getNavContainer.innerHTML='';
               </li>
           </ul>
 
-			  </div> <!-- navbar-collapse.// -->
-			 </div> <!-- container-fluid.// -->
 			</nav>
 
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+
                     <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
                         <a class="nav-link active" id="" aria-current="page" href="#">${nav[0].category_name}</a>
                     </li>
@@ -132,12 +131,12 @@ if (getLength === 0) {
           <div class="col-md-9">
             <div class="card-body">
               <h5 class="card-title fw-bold">${news.title}</h5>
-              <p class="card-text">${news.details.slice(0,350)}</p>
+              <p class="card-text">${news.details.slice(0,350)}...</p>
               <div class="row pt-5">
                 <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
                   <img class=" w-25 rounded-circle" src="${news.author.img}" alt="">
                   <div class="d-flex flex-column justify-content-start">
-                    <small>${news.author.name ? news.author.name : "stranger"}</small>
+                    <small>${news.author.name ? news.author.name : "Stranger"}</small>
                     <small>${news.author.published_date}</small>
                   </div>
                 </div>
@@ -146,7 +145,7 @@ if (getLength === 0) {
                     <i class="fa-regular fa-eye"></i>
                   </div>
                   <div class="ms-2 mt-3">
-                    <p>${news.total_view ? news.total_view : "Empty"}</p>
+                    <p>${news.total_view ? news.total_view : "Empty Data"}</p>
                   </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
@@ -217,7 +216,7 @@ const displayModal = (singleNews)=>{
                         <img src="${singleNews.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-9">
-                        <p>${singleNews.details}</p>
+                        <p>${singleNews.details.slice(0,300)}</p>
                         <div class="row">
                         <div class="col-md-4">
                             <div class="d-flex justify-content-start align-items-center">
