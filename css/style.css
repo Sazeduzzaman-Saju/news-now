@@ -105,3 +105,9 @@ padding-top: 102px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+
+
+.cards{
+    background: #6200ee75;
+    padding: 20px;
+}

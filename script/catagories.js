@@ -9,7 +9,7 @@ const loadCatagories = ()=>{
 const displayNavigation =(nav)=>{
 // start spin
 const getNavContainer = document.getElementById('nav-container');
-
+getNavContainer.innerHTML='';
     getNavContainer.innerHTML= `
             <nav class="navbar navbar-expand-lg" id="myHeader">
             <div class="container navigations" >
@@ -18,10 +18,6 @@ const getNavContainer = document.getElementById('nav-container');
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item navlinks">
-                        <a class="nav-link active navlinks" id="" aria-current="page" href="#">Home</a>
-                    </li>
-                    
                     <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
                         <a class="nav-link active" id="" aria-current="page" href="#">${nav[0].category_name}</a>
                     </li>
@@ -152,7 +148,7 @@ if (getLength === 0) {
 
 const toggleSpin = isLoading =>{
     const getTogglerSpiner = document.getElementById('loader');
-    if (isLoading) {
+    if (isLoading === true) {
         getTogglerSpiner.classList.remove('d-none');
     } else {
         getTogglerSpiner.classList.add('d-none');
@@ -234,8 +230,10 @@ const displayModal = (singleNews)=>{
     `;
     getNewsDetails.appendChild(singleNewsDetails);
 }
-
-
+const loadHome=()=>{
+    const getButton = document.getElementById('homes');
+    console.log('button clicked');
+}
 loadCatagories('');
 
 
