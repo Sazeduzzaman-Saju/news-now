@@ -17,30 +17,39 @@
         <div class="row">
           <div class=" py-2">
             <div class="container d-flex justify-content-between">
-               <a class="navbar-brand w-50" href="index.html">
-                  <img src="img/logo.png" alt="">
-                  <span class="fw-bold text-logo pt-2">NOW</span>
-               </a>
-               <div class="d-flex flex-row">
-                 <ul class="navbar-nav ms-auto d-flex flex-row">
-                <li class="nav-item"><a class="nav-link" href="index.html"> Home </a></li>
-                <li class="nav-item"><a class="nav-link ms-3" id="active" href="news.html"> News </a></li>
-                <li class="nav-item"><a class="nav-link ms-3" href="blog.html"> Blog </a></li>
+              <a class="navbar-brand w-50" href="index.html">
+                <img src="img/logo.png" alt="">
+                <span class="fw-bold text-logo pt-2">NOW</span>
+              </a>
+              <div class="d-flex flex-row">
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"> Home </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" id="active" href="news.html"> News </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-3" href="blog.html"> Blog </a>
+                  </li>
                   <a href="#" class="user-profile">
                     <img src="img/user.png" alt="">
                   </a>
-              </ul>
-               </div>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- catagories Navigation -->
       <section class="container" id="nav-container">
         <!-- Navigation Bar Here -->
       </section>
     </header>
+    <!-- Header End -->
     <main>
       <section>
+        <!-- Data Count Element -->
         <div class="container mt-3">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
@@ -50,6 +59,7 @@
             </div>
           </div>
         </div>
+        <!-- Select Option dummy -->
         <div class="container">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between">
@@ -71,9 +81,27 @@
           </div>
         </div>
       </section>
+      <!-- Modal Start -->
+      <section>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="news-details" class="modal-body"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Modal End -->
+      <!-- Load Data With Api -->
       <section class="container">
         <div id="news-container" class="row"></div>
       </section>
+      <!-- If Data Not Available -->
       <section id="no-data-available" class="container d-flex justify-content-center mt-5 p-5 d-none">
         <div class="row">
           <div class="col-lg-12">
@@ -81,6 +109,7 @@
           </div>
         </div>
       </section>
+      <!-- Loading Spinner Added -->
       <section id="loader" class="container d-flex justify-content-center p-5 mt-5 d-none">
         <div class="row">
           <div class="col-lg-12">
@@ -91,13 +120,8 @@
         </div>
       </section>
     </main>
-    <footer class="container-fluid">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12"></div>
-          <div class="col-lg-4 col-md-4 col-sm-12"></div>
-          <div class="col-lg-4 col-md-4 col-sm-12"></div>
-        </div>
-    </footer>
+    <!-- Main Design End -->
+    <!-- Footer Design Start -->
     <footer class="text-center text-lg-start">
       <div class="container d-flex justify-content-center py-5">
         <button type="button" class="icons">
@@ -114,10 +138,11 @@
         </button>
       </div>
       <!-- Copyright -->
-      <div class="text-center text-white p-3 copyright" style="background-color: rgba(0, 0, 0, 0.2);"> © 2020 Copyright<a class="text-white" href="">@mrperfect</a>
+      <div class="text-center text-white p-3 copyright" style="background-color: rgba(0, 0, 0, 0.2);"> © 2020 Copyright <a class="text-white" href="">@mrperfect</a>
       </div>
       <!-- Copyright -->
     </footer>
+    <!-- Footer Design End -->
     <!-- Bootstrap JS CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Fontawesome v6 CDN Kit -->

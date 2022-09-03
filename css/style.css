@@ -248,6 +248,32 @@ footer{
     background: var(--main-color);
     transform: rotate(360deg);
 }
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-modal-header-padding);
+    border-bottom: var(--bs-modal-header-border-width) solid var(--bs-modal-header-border-color);
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+    background: var(--main-color);
+    color: white;
+}
+
+
+
+
+
 @media only screen and (max-width:990px){
     .box{ margin: 0 0 30px; }
+    .main-profile{
+        margin-left: 0px;
+    }
+}
+@media only screen and (max-width:600px){
+    .main-profile{
+        margin-left: 40px;
+    }
 }
