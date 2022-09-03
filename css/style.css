@@ -65,6 +65,10 @@ padding-top: 102px;
 .navlinks-end{
     margin-left: 25px;
 }
+.navbar-nav>.active>a {
+    background-color: black;
+    color: green;
+}
 
 /* ======>Conent Details Area<====== */
 .btns{
@@ -82,4 +86,22 @@ padding-top: 102px;
 }
 .selecte-option{
     background-color: #F1F3F1;
+}
+
+
+.modal-button:hover{
+    color: var(--main-color);
+    transition: 0.4s;
+}
+.accordion-button:not(.collapsed){
+    color: white;
+}
+.accordion-flush .accordion-item .accordion-button{
+    background-color: var(--main-color);
+    border-radius: 0px;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

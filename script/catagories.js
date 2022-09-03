@@ -8,8 +8,8 @@ const loadCatagories = ()=>{
 
 const displayNavigation =(nav)=>{
 // start spin
-toggleSpin(true);
-    const getNavContainer = document.getElementById('nav-container');
+const getNavContainer = document.getElementById('nav-container');
+
     getNavContainer.innerHTML= `
             <nav class="navbar navbar-expand-lg" id="myHeader">
             <div class="container navigations" >
@@ -19,31 +19,32 @@ toggleSpin(true);
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
                     <li class="nav-item navlinks">
-                        <a class="nav-link active navlinks-start" onclick="loadNews('${nav.category_id}')" id="active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active navlinks" id="" aria-current="page" href="#">Home</a>
                     </li>
+                    
                     <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[0].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[0].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[1].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[1].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[1].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[2].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[2].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[2].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[3].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[3].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[3].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[4].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[4].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[4].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[5].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[5].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[5].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[6].category_id}')">
-                        <a class="nav-link " id="" aria-current="page" href="#">${nav[6].category_name}</a>
+                        <a class="nav-link active" id="" aria-current="page" href="#">${nav[6].category_name}</a>
                     </li>
                     <li class="nav-item navlinks" onclick="loadNews('${nav[7].category_id}')">
-                        <a class="nav-link navlinks-end" id="" aria-current="page" href="#">${nav[7].category_name}</a>
+                        <a class="nav-link navlinks-end active" id="" aria-current="page" href="#">${nav[7].category_name}</a>
                     </li>
 
                 </ul>
@@ -51,7 +52,9 @@ toggleSpin(true);
             </div>
         </nav>
     `;
+    toggleSpin(true);
     getNavContainer.appendChild(getNavContainer);
+
 }
 
 
@@ -85,7 +88,6 @@ if (getLength === 0) {
 }
 // Display Data
     const getNewsContainer = document.getElementById('news-container');
-    toggleSpin(false);
     getNewsContainer.innerHTML='';
     allNews.forEach(news => {
         const createElement = document.createElement('div');
@@ -102,7 +104,7 @@ if (getLength === 0) {
                   <p class="card-text">${news.details.slice(0,480)}</p>
                   <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
-                        <img class="w-25 rounded-circle" src="${news.author.img}" alt="">
+                        <img class=" w-25 rounded-circle" src="${news.author.img}" alt="">
                         <div class="d-flex flex-column justify-content-start">
                             <small>${news.author.name ? news.author.name : "stranger"}</small>
                             <small>${news.author.published_date.slice(0,10)}</small>
@@ -113,7 +115,7 @@ if (getLength === 0) {
                             <i class="fa-regular fa-eye"></i>
                         </div>
                         <div class="ms-2 mt-3">
-                            <p>${news.total_view}</p>
+                            <p>${news.total_view ? news.total_view : "Empty"}</p>
                         </div>
                         
                     </div>
@@ -130,29 +132,23 @@ if (getLength === 0) {
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-end align-items-center">
-                        <a href="#" id="" onclick="newsDetails()" ><i class="fa-solid fa-arrow-right pe-3"></i></a>
+                        <button id="details-button" onclick="newsDetails('${news._id ? news._id : 'Id Not Found'}')" class="border-0 bg-transparent"
+                        type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="fa-solid fa-arrow-right pe-3 modal-button"></i>
+                        </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        `;
-        getNewsContainer.appendChild(createElement);
-        
-    });
-    // stop spinner
-    toggleSpin(false);
-
-}
-
-
-
-
-
-
-
+              </div>
+              </div>
+              </div>
+              `;
+              getNewsContainer.appendChild(createElement);
+            })
+            // stop spinner
+            toggleSpin(false);
+        }
 
 const toggleSpin = isLoading =>{
     const getTogglerSpiner = document.getElementById('loader');
@@ -163,8 +159,83 @@ const toggleSpin = isLoading =>{
     }
 }
 
+// searchDetails
+const newsDetails=(searchDetails)=>{
+    // console.log(searchDetails);
+    const url=`https://openapi.programming-hero.com/api/news/${searchDetails}`;
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>displayModal(data.data[0]));
+}
+
+const displayModal = (singleNews)=>{
+    console.log(singleNews);
+    const getNewsDetails = document.getElementById('details-button');
+    getNewsDetails.innerHTML='';
+    const singleNewsDetails = getNewsDetails;
+    singleNewsDetails.innerHTML=`
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">${singleNews.title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="${singleNews.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-9">
+                        <p>${singleNews.details.slice(0,250)}</p>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-start align-items-center">
+                            <img class="rounded-circle" src="${singleNews.author.img}" alt="" style="width: 25% !important;">
+                                <div class="d-flex flex-column justify-content-start">
+                                    <small>${singleNews.author.name ? singleNews.author.name : "stranger"}</small>
+                                    <small>${singleNews.author.published_date.slice(0,10)}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
+                        <div>
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                        <div class="ms-2 mt-3">
+                            <p>${singleNews.author.total_view}</p>
+                        </div>
+                        
+                    </div>
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <div class="d-flex flex-column justify-content-center align-content-center">
+                                <div class="ms-2 pt-3">
+                                <i class="fa-regular fa-star-full-stroke"></i>
+                                <i class="fa-regular fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    `;
+    getNewsDetails.appendChild(singleNewsDetails);
+}
 
 
-loadCatagories();
+loadCatagories('');
 
 

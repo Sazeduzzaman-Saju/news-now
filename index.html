@@ -13,102 +13,98 @@
     <!-- User Look Start Here -->
     <!-- Header Area -->
     <header>
-        <section class="container">
-            <div class="row">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container">
-                      <a class="navbar-brand w-50" href="#"><img src="img/logo.png" alt=""><span class="fw-bold text-logo pt-2">NOW</span></a>
-                      <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                            
-                        </ul>
-                        <div>
-                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                  <a class="nav-link active" id="active" aria-current="page" href="#">News</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link " aria-current="page" href="#">Blog</a>
-                                </li>
-                                <a href="#" class="user-profile "><img src="img/user.png" alt=""></a>
-                              </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </nav>
+      <section class="container">
+        <div class="row">
+          <nav class="navbar navbar-expand-lg fixed-top p-0">
+            <div class="container bg-light  mt-0">
+              <a class="navbar-brand w-50" href="#">
+                <img src="img/logo.png" alt="">
+                <span class="fw-bold text-logo pt-2">NOW</span>
+              </a>
+              <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 "></ul>
+                <div>
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="active" aria-current="page" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <a href="#" class="user-profile">
+                      <img src="img/user.png" alt="">
+                    </a>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </section>
-        <section class="container" id="nav-container">
-            <!-- Navigation Bar Here -->
-
-        </section>
+          </nav>
+        </div>
+      </section>
+      <section class="container" id="nav-container" style="margin-top: 5rem;">
+        <!-- Navigation Bar Here -->
+      </section>
     </header>
-
-<main>
-    <section>
+    <main>
+      <section>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                    <h6 class="p-3 ps-3 selecte-option"><span id="counter" class="text-danger"> 00 </span> items found for category Entertainment</h6>
-                </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+              <h6 class="p-3 ps-3 selecte-option">
+                <span id="counter" class="text-danger"> 00 </span> items found for category Entertainment
+              </h6>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between">
-                        <div>
-                            <form action="">
-                                <label for="selection">Sort By View:</label>
-                                <select name="selection" id="cars">
-                                  <option value="">Default</option>
-                                  <option value="">Sports</option>
-                                  <option value="">Most View</option>
-                                  <option value="">Today</option>
-                                </select>
-                        </div>
-                        <div>
-                            <a href="#" class="btns ">Today’s Pick</a>
-                            <a href="#" class="btns ml-2 mt-2">Trending</a>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div id="news-container" class="row">
-
-        </div>
-
-    </section>
-    <section id="no-data-available" class="container d-flex justify-content-center mt-5 p-5 d-none">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-danger">No Data Found</h1>
-        </div>
-      </div>
-    </section>
-    <section id="loader" class="container d-flex justify-content-center mt-5 p-5 d-none">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="spinner-grow" role="status">
-            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
-      </div>
-    </section>
-</main>
-
-
-
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between">
+              <div>
+                <form action="">
+                  <label for="selection">Sort By View:</label>
+                  <select name="selection" id="cars">
+                    <option value="">Default</option>
+                    <option value="">Sports</option>
+                    <option value="">Most View</option>
+                    <option value="">Today</option>
+                  </select>
+              </div>
+              <div>
+                <a href="#" class="btns ">Today’s Pick</a>
+                <a href="#" class="btns ml-2 mt-2">Trending</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div id="news-container" class="row"></div>
+      </section>
+      <section id="no-data-available" class="container d-flex justify-content-center mt-5 p-5 d-none">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="text-danger">No Data Found</h1>
+          </div>
+        </div>
+      </section>
+      <section id="loader" class="container d-flex justify-content-center mt-5 p-5 d-none">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="spinner-grow" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- Bootstrap JS CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Fontawesome v6 CDN Kit -->
     <script src="https://kit.fontawesome.com/58b6ea3b02.js" crossorigin="anonymous"></script>
     <!-- Custom JavaScript CDN Link -->
-    <script src="script/nav.js"></script>
     <script src="script/catagories.js"></script>
     <script src="script/modal.js"></script>
   </body>

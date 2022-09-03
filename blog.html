@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News || Now Today</title>
+    <!-- Bootstrap CSS CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Custom Style Sheet Link-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+  </head>
+  <body>
+    <!-- User Look Start Here -->
+    <!-- Header Area -->
+    <header>
+        <section class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg fixed-top p-0">
+                    <div class="container bg-light">
+                      <a class="navbar-brand w-50" href="index.html"><img src="img/logo.png" alt=""><span class="fw-bold text-logo pt-2">NOW</span></a>
+                      <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                            
+                        </ul>
+                        <div>
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="active" aria-current="page" href="#">News</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link " aria-current="page" href="blog.html">Blog</a>
+                                </li>
+                                <a href="#" class="user-profile "><img src="img/user.png" alt=""></a>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </section>
+    </header>
+
+<main>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center" style="height:120vh ;">
+                <h1 class="fw-bold mb-2" style="color: var(--main-color);">Do You Know ?</h1>
+                <p class="mb-5">See the difference of some important thinks.</p>
+                <div class="accordion accordion-flush" id="accordionFlushExample" style="width: 50vw;">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button text-white collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            What is difference between var, let and const?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">The var keyword is the oldest way of declaring variables in JavaScript and is supported by all browsers. The let and const keywords are newer additions to the language and are not supported by older browsers.
+                            If you need to support older browsers, you can use var instead of let or const. If you don’t need to support older browsers, you can use let or const. If you want your variable to be immutable, use const.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button text-white collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            The Difference Between Regular Functions and Arrow Functions.
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button text-white collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            What's the difference? (map,filter,forEach)
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"><strong>.forEach(),</strong> is used to execute the same code on every element in an array but does not change the array and it returns undefined.<br><br>
+                            <strong>.map():</strong>executes the same code on every element in an array and returns a new array with the updated elements.<br><br><strong>.filter():</strong>checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button text-white collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Why do we use template string in JavaScript?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+    <!-- Bootstrap JS CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Fontawesome v6 CDN Kit -->
+    <script src="https://kit.fontawesome.com/58b6ea3b02.js" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript CDN Link -->
+    <script src="script/nav.js"></script>
+    <script src="script/catagories.js"></script>
+    <script src="script/modal.js"></script>
+  </body>
+</html>
+
+
