@@ -11,11 +11,47 @@ const displayNavigation =(nav)=>{
 const getNavContainer = document.getElementById('nav-container');
 getNavContainer.innerHTML='';
     getNavContainer.innerHTML= `
-            <nav class="navbar navbar-expand-lg" id="myHeader">
-            <div class="container navigations" >
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+			<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-light">
+			 <div class="container">
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			  <div class="collapse navbar-collapse" id="main_nav">
+				
+
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+              <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[0].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[1].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[1].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[2].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[2].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[3].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[3].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[4].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[4].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[5].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[5].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[6].category_id}')">
+                  <a class="nav-link text-black active" id="" aria-current="page" href="#">${nav[6].category_name}</a>
+              </li>
+              <li class="nav-item navlinks" onclick="loadNews('${nav[7].category_id}')">
+                  <a class="nav-link text-black navlinks-end active" id="" aria-current="page" href="#">${nav[7].category_name}</a>
+              </li>
+          </ul>
+
+			  </div> <!-- navbar-collapse.// -->
+			 </div> <!-- container-fluid.// -->
+			</nav>
+
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
                     <li class="nav-item navlinks" onclick="loadNews('${nav[0].category_id}')">
@@ -42,7 +78,6 @@ getNavContainer.innerHTML='';
                     <li class="nav-item navlinks" onclick="loadNews('${nav[7].category_id}')">
                         <a class="nav-link navlinks-end active" id="" aria-current="page" href="#">${nav[7].category_name}</a>
                     </li>
-
                 </ul>
             </div>
             </div>
@@ -88,57 +123,54 @@ if (getLength === 0) {
     allNews.forEach(news => {
         const createElement = document.createElement('div');
         createElement.innerHTML=`
-        <div class="col-lg-12 col-md-12 col-sm-12">
+
         <div class="card mb-3 mt-5 shadow-lg border-0">
-            <div class="row g-0">
-              <div class="col-md-3">
-                <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">${news.title}</h5>
-                  <p class="card-text">${news.details.slice(0,480)}</p>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
-                        <img class=" w-25 rounded-circle" src="${news.author.img}" alt="">
-                        <div class="d-flex flex-column justify-content-start">
-                            <small>${news.author.name ? news.author.name : "stranger"}</small>
-                            <small>${news.author.published_date.slice(0,10)}</small>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
-                        <div>
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="ms-2 mt-3">
-                            <p>${news.total_view ? news.total_view : "Empty"}</p>
-                        </div>
-                        
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
-                        <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                        </div>
-                        <div class="ms-2">
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-end align-items-center">
-                        <button id="details-button" onclick="newsDetails('${news._id ? news._id : 'Id Not Found'}')" class="border-0 bg-transparent"
-                        type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i class="fa-solid fa-arrow-right pe-3 modal-button"></i>
-                        </button>
-                    </div>
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">${news.title}</h5>
+              <p class="card-text">${news.details.slice(0,350)}</p>
+              <div class="row pt-5">
+                <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
+                  <img class=" w-25 rounded-circle" src="${news.author.img}" alt="">
+                  <div class="d-flex flex-column justify-content-start">
+                    <small>${news.author.name ? news.author.name : "stranger"}</small>
+                    <small>${news.author.published_date}</small>
                   </div>
                 </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
+                  <div>
+                    <i class="fa-regular fa-eye"></i>
+                  </div>
+                  <div class="ms-2 mt-3">
+                    <p>${news.total_view ? news.total_view : "Empty"}</p>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
+                  <div>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                  </div>
+                  <div class="ms-2">
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-end align-items-center">
+                  <button id="details-button" onclick="newsDetails('${news._id ? news._id : 'Id Not Found'}')" class="border-0 bg-transparent" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class="fa-solid fa-arrow-right pe-3 modal-button"></i>
+                  </button>
+                </div>
               </div>
-              </div>
-              </div>
-              </div>
+            </div>
+          </div>
+        </div>
+      </div>
               `;
               getNewsContainer.appendChild(createElement);
             })
@@ -185,7 +217,7 @@ const displayModal = (singleNews)=>{
                         <img src="${singleNews.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-9">
-                        <p>${singleNews.details.slice(0,250)}</p>
+                        <p>${singleNews.details}</p>
                         <div class="row">
                         <div class="col-md-4">
                             <div class="d-flex justify-content-start align-items-center">
@@ -237,3 +269,19 @@ const loadHome=()=>{
 loadCatagories('');
 
 
+document.addEventListener("DOMContentLoaded", function(){
+        
+    window.addEventListener('scroll', function() {
+         
+      if (window.scrollY > 200) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+      } else {
+         document.getElementById('navbar_top').classList.remove('fixed-top');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+      } 
+    });
+  }); 

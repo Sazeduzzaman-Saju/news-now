@@ -15,49 +15,37 @@
     <header>
       <section class="container">
         <div class="row">
-          <nav class="navbar navbar-expand-lg fixed-top p-0">
-            <div class="container bg-light  mt-0">
-              <a class="navbar-brand w-50" href="index.html">
-                <img src="img/logo.png" alt="">
-                <span class="fw-bold text-logo pt-2">NOW</span>
-              </a>
-              <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 "></ul>
-                <div>
-                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link "  aria-current="page" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" id="active" aria-current="page" href="news.html">News</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link " aria-current="page" href="blog.html">Blog</a>
-                    </li>
-                    <a href="#" class="user-profile">
-                      <img src="img/user.png" alt="">
-                    </a>
-                  </ul>
-                </div>
-              </div>
+          <div class=" py-2">
+            <div class="container d-flex justify-content-between">
+               <a class="navbar-brand w-50" href="index.html">
+                  <img src="img/logo.png" alt="">
+                  <span class="fw-bold text-logo pt-2">NOW</span>
+               </a>
+               <div class="d-flex flex-row">
+                 <ul class="navbar-nav ms-auto d-flex flex-row">
+                <li class="nav-item"><a class="nav-link" href="index.html"> Home </a></li>
+                <li class="nav-item"><a class="nav-link ms-3" id="active" href="news.html"> News </a></li>
+                <li class="nav-item"><a class="nav-link ms-3" href="blog.html"> Blog </a></li>
+                  <a href="#" class="user-profile">
+                    <img src="img/user.png" alt="">
+                  </a>
+              </ul>
+               </div>
             </div>
-          </nav>
+          </div>
         </div>
       </section>
-      <section class="container" id="nav-container" style="margin-top: 5rem;">
+      <section class="container" id="nav-container">
         <!-- Navigation Bar Here -->
       </section>
     </header>
     <main>
       <section>
-        <div class="container">
+        <div class="container mt-3">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
               <h6 class="p-3 ps-3 selecte-option">
-                <span id="counter" class="text-danger"> 00 </span> items found for category Entertainment
+                <span id="counter" class="text-danger"> 00 </span> Items found
               </h6>
             </div>
           </div>
@@ -76,8 +64,8 @@
                   </select>
               </div>
               <div>
-                <a href="#" class="btns ">Today’s Pick</a>
-                <a href="#" class="btns ml-2 mt-2">Trending</a>
+                <a href="#" class="btns">Today’s Pick</a>
+                <a href="#" class="btns ml-2 mt-2 d-none d-block">Trending</a>
               </div>
             </div>
           </div>
@@ -109,6 +97,26 @@
           <div class="col-lg-4 col-md-4 col-sm-12"></div>
           <div class="col-lg-4 col-md-4 col-sm-12"></div>
         </div>
+    </footer>
+    <footer class="text-center text-lg-start">
+      <div class="container d-flex justify-content-center py-5">
+        <button type="button" class="icons">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button type="button" class="icons">
+          <i class="fab fa-youtube"></i>
+        </button>
+        <button type="button" class="icons">
+          <i class="fab fa-instagram"></i>
+        </button>
+        <button type="button" class="icons">
+          <i class="fab fa-twitter"></i>
+        </button>
+      </div>
+      <!-- Copyright -->
+      <div class="text-center text-white p-3 copyright" style="background-color: rgba(0, 0, 0, 0.2);"> © 2020 Copyright<a class="text-white" href="">@mrperfect</a>
+      </div>
+      <!-- Copyright -->
     </footer>
     <!-- Bootstrap JS CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
